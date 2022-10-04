@@ -2,15 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import { unregister } from './core'
-import {GlobalStyles, theme } from './styles'
+import { Content, Title } from './components'
+import { GlobalStyles, theme } from './styles-main'
 import { ThemeProvider } from 'styled-components';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <ThemeProvider theme={theme }>
-  <GlobalStyles />
-    <div className="div">Hello World</div>
+  <ThemeProvider theme={theme}>
+    <GlobalStyles />
+    <Content>
+     <Title>Sudoku</Title>
+    </Content>
   </ThemeProvider>
 );
 
@@ -18,4 +21,4 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
- unregister();
+unregister();
